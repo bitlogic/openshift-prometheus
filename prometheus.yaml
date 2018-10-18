@@ -95,7 +95,7 @@ objects:
           args:
           - --config.file=/etc/prometheus/prometheus.yml
           - --web.listen-address=:9090
-          - --storage.tsdb.retention=6h
+          - --storage.tsdb.retention=72h
           - --storage.tsdb.min-block-duration=15m
           - --storage.tsdb.max-block-duration=60m
           image: ${IMAGE_PROMETHEUS}
@@ -149,6 +149,8 @@ objects:
           configMap:
             defaultMode: 420
             name: prometheus-rules
+        nodeSelector:
+          env: prometheus
 
 - apiVersion: v1
   kind: ConfigMap

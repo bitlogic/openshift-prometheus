@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: grafana-lib
+  labels:
+    app: "grafana"
+spec:
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  awsElasticBlockStore:
+    fsType: xfs
+    volumeID: vol-0235b8135e35ce821
+  capacity:
+    storage: 10Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: grafana-log
+  labels:
+    app: "grafana"
+spec:
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  awsElasticBlockStore:
+    fsType: xfs
+    volumeID: vol-0918e1c0ed1a71870
+  capacity:
+    storage: 10Gi
