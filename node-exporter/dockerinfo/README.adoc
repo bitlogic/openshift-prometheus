@@ -9,7 +9,7 @@ To install run the following command from your OpenShift bastion host (where you
 
 [source,bash]
 ----
-ansible-playbook -i /etc/ansible/hosts install_dockerinfo.yml
+ansible-playbook -i /etc/ansible/hosts install_dockerinfo.yml --private-key ../key.pem
 ----
 
 There is a Grafana Dashboard (DockerStatus.json) that reads the values from this utility script and displays them in a graphical fashion. Simply import the Dashboard into Grafana once Grafana has been set up and connected to Prometheus.

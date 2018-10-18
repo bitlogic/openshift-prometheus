@@ -1,5 +1,8 @@
 # OpenShift Prometheus Node Exporter
 
+RedHat tutorial: http://www.opentlc.com/rhte-na/advinfra/monitoring_labs.html#_installing_prometheus_for_monitoring_openshift_container_platform
+
+
 The Node Exporter provides OS and system level metrics for Prometheus. The exporter runs as a link:https://docs.openshift.com/container-platform/latest/dev_guide/daemonsets.html[DaemonSet] to guarantee each node runs at least one copy of the application.
 
 ## Deployment to OpenShift
@@ -14,7 +17,7 @@ The easy way to open the firewall ports on all nodes is to run the provided Ansi
 
 [source,bash]
 ----
-ansible-playbook -i /etc/ansible/hosts update_firewall.yml
+ansible-playbook -i /etc/ansible/hosts update_firewall.yml --private-key key.pem
 ----
 
 #### Manual Version
